@@ -1,0 +1,176 @@
+<div class="container emp-profile shadow-lg">
+    
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="profile-img">
+                    <img src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/279800440_523723482575329_6918109526799050912_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=4IJQFhIQXPwAX_h67oh&_nc_ht=scontent.fdad3-4.fna&oh=00_AfA4RjOnkk94M6jLpe0YSlXMedJNrhI-XBy8RMaqEgNUzg&oe=63E2F695"
+                        alt="" height="150x" />
+                    <div class="file btn btn-lg btn-primary">
+                        Change Photo
+                        <input type="file" name="file" />
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-5">
+                <div class="profile-head">
+                    <h5>
+                       {{studentSesion.fullname}}
+                    </h5>
+                    <h6>
+                        Thành viên mới
+                    </h6>
+                    <p class="proile-rating">ĐIỂM TRUNG BÌNH : <span>9.0</span></p>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true"><b>Thông tin</b></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3">
+                <button type="button" class="btn-form p-1 mt-2 " data-toggle="modal" data-target="#exampleModal"
+                    name="btnAddMore" ng-click="changeInfo()">Thay đổi thông tin </button>
+                <button type="button" class="btn-form p-1 mt-2 " data-toggle="modal" data-target="#modalchangepass"
+                    name="btnAddMore">Đổi mật khẩu </button>
+
+                <!-- start modal info -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Thay đổi thông tin</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form ng-submit="changeInfo($event)">
+                                    <div class="form-group">
+                                        <label for="">Họ và tên</label>
+                                        <input type="text" class="form-control" ng-model="student.fullname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="text" class="form-control" ng-model="student.email">
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <label for="" class="mr-2">Giới tính</label>
+                                        <input type="radio" class="form-check-input" name="gender" ng-model="student.gender" value="true">Nam &nbsp;
+                                        <input type="radio" class="form-check-input" name="gender" ng-model="student.gender" value="false">Nữ
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <label for="">Ngày sinh</label>
+                                        <input type="date" class="form-control" ng-model="student.birthday">
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <button class="btn-form p-2 w-100" type="submit">Thay đổi</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal info -->
+
+                <!-- start modal change password -->
+                <div class="modal fade" id="modalchangepass" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Thay đổi thông tin</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="" ng-submit="changePass($event)" name="formForgetPassword">
+                                    <div class="form-group">
+                                        <label for="">Mật khẩu hiện tại</label>
+                                        <input type="text" class="form-control" ng-model="form.password" name="password" required>
+                                        <small ng-show="formForgetPassword.password.$invalid">Vui lòng nhập mật khẩu</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Mật khẩu mới</label>
+                                        <input type="text" class="form-control" ng-model="form.newPassword" name="newPassword" required>
+                                        <small ng-show="formForgetPassword.newPassword.$invalid">Vui lòng nhập mật khẩu</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="">Xác nhận mật khẩu</label>
+                                        <input type="text" class="form-control" ng-model="form.rePassword" name="rePassword">
+                                        <small ng-show="form.newPassword != form.rePassword">Vui lòng nhập trùng mật khẩu</small>
+                                    </div>
+                                    <div class="form-group mt-1">
+                                        <button class="btn-form p-2 w-100" type="submit">Thay đổi</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- end modal chang password -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-8">
+                <div class="tab-content profile-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Tên đăng nhập</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{studentSesion.username}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Họ và tên</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{studentSesion.fullname}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{studentSesion.email}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Sinh nhật</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>{{studentSesion.birthday |date:'dd/MM/yyyy'}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Điểm TB</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>9.0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+</div>

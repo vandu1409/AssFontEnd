@@ -1,0 +1,75 @@
+<!-- Header Start -->
+<div class="container-fluid py-5 mb-5 page-header ">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h1 class=" text-white ">Khóa học</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Khóa học</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- tab -->
+<div class="text-center mb-3 wow fadeInUp" data-wow-delay="0.1s">
+    <h6 class="section-title bg-white text-center px-3">Các Khóa học</h6>
+</div>
+
+
+<!-- card course start -->
+<div class="container mt-4">
+
+    <div class="row">
+        <!-- course start -->
+        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" ng-repeat="item in listSubject|limitTo:8:begin">
+            <div class="team-item bg-light">
+                <div class="overflow-hidden">
+                    <img class="w-100 h-100" src="images/logos/{{item.Logo}}"
+                        alt="">
+                </div>
+                <div class="d-flex justify-content-center position-relative list-btn " style="margin-top: -23px;">
+                    <div class="bg-light d-flex justify-content-center pt-2 px-1 pb-2">
+                        <a class="btn  mx-1 px-4" href=""><i class="bi bi-info-square-fill"></i></a>
+                        <a class="btn  mx-1 px-4" ng-click="redirecQuiz(item.Id,item.Name)"><i class="bi bi-app-indicator"></i></a>
+                    </div>
+                </div>
+                <div class="text-center p-4 team-footer">
+                    <h5 class="mb-0">{{item.Name}}</h5>
+                    <small>Infomation Technology</small>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- card course end -->
+
+        
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-5"></div>
+        <div class="d-flex justify-content-center ">
+            <nav aria-label="Page navigation example wow fadeInUp " data-wow-delay="0.5s">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item ">
+                        <button class="page-link" ng-click="first()"><i class="bi bi-chevron-left"></i> First</button>
+                    </li>
+                    <li class="page-item"><button class="page-link" ng-click="prev()">Prev</button></li>
+                    <li class="page-item"><button class="page-link" ng-click="next()">Next</button></li>
+                    
+                    <li class="page-item">
+                        <button class="page-link" ng-click="last()">Last <i class="bi bi-chevron-right"></i></button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!-- tab -->

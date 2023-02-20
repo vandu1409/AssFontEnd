@@ -1,0 +1,30 @@
+.card {
+
+    height: 100%;
+}
+
+.user-image i {
+    color: #339966;
+    font-size: 150px;
+}
+
+form label {
+    color: #339966;
+    font-weight: bold;
+
+}
+
+.btn-form {
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #339966;
+    width: 70%;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-form:hover { 
+    transform: scale(0.95);
+}
